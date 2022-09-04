@@ -50,6 +50,7 @@ object LiquidBounce {
     const val MINECRAFT_VERSION = "1.8.9"
     const val VERSIONTYPE = "RELEASE" // Change to RELEASE on release and BETA on beta
     const val VERSIONNUMBER = "4.6.5" // major build number
+    const val SIGMA_JELLO = "Jello"
     
     @JvmField
     val gitInfo = Properties().also {
@@ -64,7 +65,7 @@ object LiquidBounce {
     // 自动读取客户端版本
     @JvmField
     val CLIENT_VERSION = gitInfo["git.commit.id.abbrev"]?.let { "git-$it" } ?: "unknown"
-
+ 
     @JvmField
     val CLIENT_BRANCH = (gitInfo["git.branch"] ?: "unknown").let {
         if (it == "main") "Main" else it
