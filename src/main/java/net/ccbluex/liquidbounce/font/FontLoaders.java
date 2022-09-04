@@ -24,6 +24,7 @@ public abstract class FontLoaders {
     public static CFontRenderer C18 = new CFontRenderer(getComfortaa(18), true, true);
     public static CFontRenderer C20 = new CFontRenderer(getComfortaa(20), true, true);
     public static CFontRenderer C22 = new CFontRenderer(getComfortaa(22), true, true);
+    public static CFontRenderer SJello = new CFontRenderer(getSJello(40), true, true);
     public static CFontRenderer Logo = new CFontRenderer(getNovo(40), true, true);
     public static ArrayList<CFontRenderer> fonts = new ArrayList<>();
 
@@ -47,6 +48,18 @@ public abstract class FontLoaders {
         Font font;
         try {
             font = Font.createFont(0, Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("fdpclient/font/regular.ttf")).getInputStream()).deriveFont(0, (float) size);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error loading font");
+            font = new Font("default", 0, size);
+        }
+        return font;
+    }
+
+    public static Font getSJello(int size) {
+        Font font;
+        try {
+            font = Font.createFont(0, Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("fdpclient/font/sigmajello.otf")).getInputStream()).deriveFont(0, (float) size);
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Error loading font");
