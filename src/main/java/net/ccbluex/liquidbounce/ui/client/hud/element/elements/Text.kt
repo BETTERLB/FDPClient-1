@@ -216,11 +216,11 @@ class Text(
 
         if(textStyle.get().contains("Jello")) {
             if (!rectValue.get().contains("FDP")) {
-                FontLoaders.F40.drawString(
+                FontLoaders.Jello.drawString(
                     displayText, 5F, 0F,Color(255,255,255,140).rgb
                 )
                 FontLoaders.F24.drawString(
-                    LiquidBounce.CLIENT_VERSION.toString() , 5F, 23F,Color(255,255,255,140).rgb
+                    LiquidBounce.SIGMA_JELLO.toString() , 5F, 23F,Color(255,255,255,140).rgb
                 )
             }
         }
